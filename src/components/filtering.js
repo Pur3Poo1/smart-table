@@ -23,6 +23,14 @@ export function initFiltering(elements, indexes) {
             action.closest('.filter-wrapper').querySelector('input').value = '';
             state[action.dataset.field] = '';
         }
+
+        if (state.totalFrom !== '' || state.totalTo !== '') {
+            state.total = [
+                state.totalFrom ? parseFloat(state.totalFrom) : '',
+                state.totalTo ? parseFloat(state.totalTo) : ''
+            ];
+        }
+        
         // @todo: #4.5 — отфильтровать данные используя компаратор
         return data.filter(row => compare(row, state));
     }
