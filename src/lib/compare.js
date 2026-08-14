@@ -159,7 +159,6 @@ const rules = {
 
         // Убедиться, что поисковый запрос это строка
         const searchTerm = String(targetValue);
-
         // Проверить, содержит ли какое-либо из указанных полей исходного объекта поисковый запрос
         for (const field of searchFields) {
             if (Object.prototype.hasOwnProperty.call(source, field)) {
